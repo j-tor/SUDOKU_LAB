@@ -77,7 +77,7 @@ public class VentanaN_P extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 51));
         jLabel2.setText("*Si acepta se perderán los datos actuales*");
         panelFondo.add(jLabel2);
-        jLabel2.setBounds(120, 120, 230, 16);
+        jLabel2.setBounds(110, 120, 260, 16);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
