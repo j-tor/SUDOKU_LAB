@@ -118,8 +118,8 @@ public class TableroSudoku extends JPanel {
 
             @Override
             public void mousePressed(MouseEvent e) {
-                pressed(txt);
-                txtSelected = txt;
+//                pressed(txt);
+//                txtSelected = txt;
 
             }
 
