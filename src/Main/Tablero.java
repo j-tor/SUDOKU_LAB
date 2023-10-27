@@ -303,11 +303,7 @@ public class Tablero extends JPanel {
         }
 
     }
-//        public void verSolucion(){
-//        sudoku.verSolucion(listaTxt);
-//    }
-//
-//  
+
 
     public Color getTxtBackground4() {
         return txtBackground4;
