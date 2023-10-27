@@ -169,33 +169,5 @@ public class Sudoku {
     public void setSudoku(int[][] sudoku) {
         this.sudoku = sudoku;
     }
-//      public boolean verSolucion(JTextField[][] listaTxt) {
-//          
-//          for (int i = 0; i < sudoku.length; i++) {
-//            for (int j = 0; j < sudoku[0].length; j++) {
-//                if (sudoku[i][j] == 0) {
-//                    for (int valor = 1; valor <= 9; valor++) {
-//                        if (validarFila(i, valor) && validarColumna(j, valor) && validarCuadrante(i, j, valor)) {
-//                            sudoku[i][j] = valor;
-//                            listaTxt[i][j].setText(String.valueOf(getSudoku()[i][j]));
-//                            if (verSolucion(listaTxt)) {
-//                                return true;
-//                            }
-//                            sudoku[i][j] = 0;
-//                              listaTxt[i][j].setText("");
-//                        }
-//                        try {
-//                            Thread.sleep(10);
-//                        } catch (Exception e) {
-//                        }
-//                    }
-//                    return false;
-//                }
-//            }
-//        }
-//        return true;
-//          
-//
-//    }
 
 }

@@ -8,7 +8,6 @@ public class FormSudoku extends javax.swing.JFrame {
 
     public static TableroSudoku tableroSudoku;
     private TableroNumeros tableroNumeros;
-    private FromNiveles fromNiveles;
     private boolean estadoCrear;
 
     private int xPos;
@@ -68,8 +67,6 @@ public class FormSudoku extends javax.swing.JFrame {
 
         panelFondo = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        panelNuevaPartida = new javax.swing.JPanel();
-        lblNuevaPartida = new javax.swing.JLabel();
         panelLimpiar = new javax.swing.JPanel();
         lblLimpiar = new javax.swing.JLabel();
         panelCrear = new javax.swing.JPanel();
@@ -103,42 +100,6 @@ public class FormSudoku extends javax.swing.JFrame {
         jLabel1.setText("SUDOKU");
         panelFondo.add(jLabel1);
         jLabel1.setBounds(20, 30, 120, 20);
-
-        panelNuevaPartida.setBackground(new java.awt.Color(89, 43, 25));
-
-        lblNuevaPartida.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
-        lblNuevaPartida.setForeground(new java.awt.Color(255, 255, 255));
-        lblNuevaPartida.setText("    NUEVA PARTIDA");
-        lblNuevaPartida.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lblNuevaPartida.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                lblNuevaPartidaMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                lblNuevaPartidaMouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                lblNuevaPartidaMousePressed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout panelNuevaPartidaLayout = new javax.swing.GroupLayout(panelNuevaPartida);
-        panelNuevaPartida.setLayout(panelNuevaPartidaLayout);
-        panelNuevaPartidaLayout.setHorizontalGroup(
-            panelNuevaPartidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelNuevaPartidaLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(lblNuevaPartida, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        panelNuevaPartidaLayout.setVerticalGroup(
-            panelNuevaPartidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelNuevaPartidaLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(lblNuevaPartida, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
-        panelFondo.add(panelNuevaPartida);
-        panelNuevaPartida.setBounds(420, 60, 150, 40);
 
         panelLimpiar.setBackground(new java.awt.Color(89, 43, 25));
 
@@ -314,15 +275,6 @@ public class FormSudoku extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void lblNuevaPartidaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblNuevaPartidaMousePressed
-        if (fromNiveles != null) {
-            fromNiveles.setVisible(true);
-        } else {
-            fromNiveles = new FromNiveles(tableroSudoku);
-            fromNiveles.setVisible(true);
-        }
-    }//GEN-LAST:event_lblNuevaPartidaMousePressed
-
     private void lblLimpiarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLimpiarMousePressed
         tableroSudoku.limpiar();
     }//GEN-LAST:event_lblLimpiarMousePressed
@@ -330,7 +282,6 @@ public class FormSudoku extends javax.swing.JFrame {
     private void lblCrearMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCrearMousePressed
 
         if (estadoCrear) {
-            lblNuevaPartida.setVisible(false);
             lblLimpiar.setVisible(false);
             lblComprobar.setVisible(false);
             lblResolver.setVisible(false);
@@ -340,7 +291,6 @@ public class FormSudoku extends javax.swing.JFrame {
 
         } else {
             if (tableroSudoku.crearSudokuPersonalizado()) {
-                lblNuevaPartida.setVisible(true);
                 lblLimpiar.setVisible(true);
                 lblComprobar.setVisible(true);
                 lblResolver.setVisible(true);
@@ -373,14 +323,6 @@ public class FormSudoku extends javax.swing.JFrame {
     private void jLabel2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MousePressed
         System.exit(0);
     }//GEN-LAST:event_jLabel2MousePressed
-
-    private void lblNuevaPartidaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblNuevaPartidaMouseEntered
-        panelNuevaPartida.setBackground(new Color(143, 72, 72));
-    }//GEN-LAST:event_lblNuevaPartidaMouseEntered
-
-    private void lblNuevaPartidaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblNuevaPartidaMouseExited
-        panelNuevaPartida.setBackground(new Color(89,43,25));
-    }//GEN-LAST:event_lblNuevaPartidaMouseExited
 
     private void lblLimpiarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLimpiarMouseEntered
         panelLimpiar.setBackground(new Color(143, 72, 72));
@@ -421,13 +363,11 @@ public class FormSudoku extends javax.swing.JFrame {
     private javax.swing.JLabel lblComprobar;
     private javax.swing.JLabel lblCrear;
     private javax.swing.JLabel lblLimpiar;
-    private javax.swing.JLabel lblNuevaPartida;
     private javax.swing.JLabel lblResolver;
     private javax.swing.JPanel panelComprobar;
     private javax.swing.JPanel panelCrear;
     private javax.swing.JPanel panelFondo;
     private javax.swing.JPanel panelLimpiar;
-    private javax.swing.JPanel panelNuevaPartida;
     private javax.swing.JPanel panelResolver;
     // End of variables declaration//GEN-END:variables
 
