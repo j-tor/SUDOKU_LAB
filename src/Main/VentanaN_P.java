@@ -4,12 +4,12 @@ package Main;
 import java.awt.Color;
 import javax.swing.BorderFactory;
 
-public class VentanaNP extends javax.swing.JFrame {
+public class VentanaN_P extends javax.swing.JFrame {
 
     private Tablero tableroSudoku;
     private int xPos;
     private int yPos;
-    public VentanaNP(Tablero tableroSudoku) {
+    public VentanaN_P(Tablero tableroSudoku) {
         initComponents();
         this.tableroSudoku = tableroSudoku;
         panelFondo.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));

@@ -7,7 +7,7 @@ import static Main.SudokuMainP.tableroSudoku;
 public class SudokuMainP extends javax.swing.JFrame {
 
     public static Tablero tableroSudoku;
-    private VentanaNP fromNiveles;
+    private VentanaN_P fromNiveles;
     private boolean estadoCrear;
 
     private int xPos;
@@ -158,7 +158,7 @@ public class SudokuMainP extends javax.swing.JFrame {
         if (fromNiveles != null) {
             fromNiveles.setVisible(true);
         } else {
-            fromNiveles = new VentanaNP(tableroSudoku);
+            fromNiveles = new VentanaN_P(tableroSudoku);
             fromNiveles.setVisible(true);
 
         }
