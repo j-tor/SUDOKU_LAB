@@ -6,7 +6,7 @@ import static Main.SudokuMainP.tableroSudoku;
 
 public class SudokuMainP extends javax.swing.JFrame {
 
-    public static TableroLogica tableroSudoku;
+    public static Tablero tableroSudoku;
     private VentanaNP fromNiveles;
     private boolean estadoCrear;
 
@@ -20,7 +20,7 @@ public class SudokuMainP extends javax.swing.JFrame {
     }
 
     public void iniciarComponentes() {
-        tableroSudoku = new TableroLogica();
+        tableroSudoku = new Tablero();
         tableroSudoku.setTxtAltura(36);
         tableroSudoku.setTxtAncho(36);
         tableroSudoku.setTxtMargen(4);
@@ -96,7 +96,7 @@ public class SudokuMainP extends javax.swing.JFrame {
             }
         });
         panelFondo.add(nuevo);
-        nuevo.setBounds(50, 420, 110, 32);
+        nuevo.setBounds(70, 420, 110, 30);
 
         salir.setBackground(new java.awt.Color(0, 102, 153));
         salir.setFont(new java.awt.Font("Impact", 0, 14)); // NOI18N
@@ -109,7 +109,7 @@ public class SudokuMainP extends javax.swing.JFrame {
             }
         });
         panelFondo.add(salir);
-        salir.setBounds(290, 420, 100, 32);
+        salir.setBounds(310, 420, 100, 30);
 
         jButton3.setBackground(new java.awt.Color(0, 102, 153));
         jButton3.setFont(new java.awt.Font("Impact", 0, 14)); // NOI18N
@@ -122,7 +122,7 @@ public class SudokuMainP extends javax.swing.JFrame {
             }
         });
         panelFondo.add(jButton3);
-        jButton3.setBounds(170, 420, 110, 32);
+        jButton3.setBounds(190, 420, 110, 30);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

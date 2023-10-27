@@ -12,9 +12,9 @@ import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import Main.Sudoku;
+import Main.SudokuLogica;
 
-public class TableroLogica extends JPanel {
+public class Tablero extends JPanel {
 
     private JTextField[][] listaTxt;
     private int txtAncho;
@@ -31,12 +31,12 @@ public class TableroLogica extends JPanel {
     private Color txtBackground4;
     private Color txtForeground4;
 
-    private Sudoku sudoku;
+    private SudokuLogica sudoku;
     private ArrayList<JTextField> listaTxtAux;
     private ArrayList<JTextField> listaTxtGenerados;
     public JTextField txtSelected;
 
-    public TableroLogica() {
+    public Tablero() {
         iniciarComponentes();
     }
 
@@ -55,7 +55,7 @@ public class TableroLogica extends JPanel {
         txtForeground3 = Color.BLACK;
         txtBackground4 = Color.RED;
         txtForeground4 = Color.WHITE;
-        sudoku = new Sudoku();
+        sudoku = new SudokuLogica();
         listaTxtAux = new ArrayList<>();
         listaTxtGenerados = new ArrayList<>();
         txtSelected = new JTextField();
@@ -225,35 +225,7 @@ public class TableroLogica extends JPanel {
         }
     }
 
-    public boolean crearSudokuPersonalizado() {
-        sudoku.limpiarSudoku();
-        for (int i = 0; i < listaTxt.length; i++) {
-            for (int j = 0; j < listaTxt[0].length; j++) {
-                if (!(listaTxt[i][j].getText().isEmpty())) {
-
-                    int num = Integer.valueOf(listaTxt[i][j].getText());
-                    if (sudoku.validarColumna(j, num) && sudoku.validarFila(i, num) && sudoku.validarCuadrante(i, j, num)) {
-                        sudoku.getSudoku()[i][j] = num;
-                        listaTxt[i][j].setBackground(txtBackground4);
-                        listaTxt[i][j].setForeground(txtForeground4);
-                        listaTxt[i][j].setBorder(BorderFactory.createLineBorder(panelBackground, 1));
-                        listaTxtGenerados.add(listaTxt[i][j]);
-                    } else {
-                        listaTxtGenerados.clear();
-                        JOptionPane.showMessageDialog(null, "Sudoku Incorrecto", "Error", JOptionPane.ERROR_MESSAGE);
-                        return false;
-                    }
-
-                } else {
-                    listaTxt[i][j].setBackground(txtBackground1);
-                    listaTxt[i][j].setForeground(txtForeground1);
-                    listaTxt[i][j].setBorder(BorderFactory.createLineBorder(panelBackground, 1));
-                }
-            }
-        }
-        return true;
-
-    }
+    
 
     public void limpiarTxt() {
         for (int i = 0; i < listaTxt.length; i++) {
@@ -303,7 +275,7 @@ public class TableroLogica extends JPanel {
         if (sudoku.comprobarSudoku()) {
             JOptionPane.showMessageDialog(null, "¡Felicidades, has ganado!", "Gane", JOptionPane.INFORMATION_MESSAGE);
         } else {
-            JOptionPane.showMessageDialog(null, "No hay solución", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Sudoku incorrecto", "Error", JOptionPane.ERROR_MESSAGE);
         }
 
     }
@@ -353,11 +325,11 @@ public class TableroLogica extends JPanel {
         this.txtForeground4 = txtForeground4;
     }
 
-    public Sudoku getSudoku() {
+    public SudokuLogica getSudoku() {
         return sudoku;
     }
 
-    public void setSudoku(Sudoku sudoku) {
+    public void setSudoku(SudokuLogica sudoku) {
         this.sudoku = sudoku;
     }
 

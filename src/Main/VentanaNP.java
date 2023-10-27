@@ -6,10 +6,10 @@ import javax.swing.BorderFactory;
 
 public class VentanaNP extends javax.swing.JFrame {
 
-    private TableroLogica tableroSudoku;
+    private Tablero tableroSudoku;
     private int xPos;
     private int yPos;
-    public VentanaNP(TableroLogica tableroSudoku) {
+    public VentanaNP(Tablero tableroSudoku) {
         initComponents();
         this.tableroSudoku = tableroSudoku;
         panelFondo.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));

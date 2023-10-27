@@ -2,11 +2,11 @@ package Main;
 
 import java.util.Random;
 
-public class Sudoku {
+public class SudokuLogica {
 
     private int sudoku[][];
 
-    public Sudoku() {
+    public SudokuLogica() {
         sudoku = new int[9][9];
         limpiarSudoku();
     }
